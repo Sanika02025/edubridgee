@@ -7,10 +7,9 @@
 
 /* ========== Body & Background ========== */
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  background: linear-gradient(135deg, #fff8b0, #b3e5fc);
-  min-height: 100vh;
-  color: #333;
+  font-family: Arial;
+  background: #f0f8ff;
+  text-align: center;
 }
 
 /* ========== Header & Navigation ========== */

@@ -1,57 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>EduBridge - GK</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GK</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo">EduBridge</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="videos.html">Videos</a>
-      <a href="quiz.html">Quizzes</a>
-      <a href="gk.html">GK</a>
-    </nav>
-  </header>
 
-  <div class="main">
-    <h2>General Knowledge Flashcards</h2>
-    <p>Click a card to see the answer.</p>
+<header>
+  <h2>🧠 GK Learning</h2>
+</header>
 
-    <div class="gk-container">
-      <div class="gk-card">
-  <img src="tiger.jpg">
-  <p>National animal of India?</p>
-  <button onclick="speak('Tiger')">🔊</button>
+<div class="main">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.jpg" width="200">
+<p>National Animal of India</p>
+<button onclick="speak('Tiger')">🔊 Hear</button>
+
 </div>
 
-      <div class="gk-card" onclick="toggleGK(this)">
-        <span class="front">How many days in a week?</span>
-        <span class="back" style="display:none;">7 days</span>
-      </div>
-
-      <div class="gk-card" onclick="toggleGK(this)">
-        <span class="front">Largest planet?</span>
-        <span class="back" style="display:none;">Jupiter</span>
-      </div>
-    </div>
-  </div>
-  
-
-  <script>
-    function toggleGK(card) {
-      const front = card.querySelector(".front");
-      const back = card.querySelector(".back");
-      if (front.style.display === "none") {
-        front.style.display = "block";
-        back.style.display = "none";
-      } else {
-        front.style.display = "none";
-        back.style.display = "block";
-      }
-    }
-  </script>
+<script src="js/gk.js"></script>
 </body>
 </html>

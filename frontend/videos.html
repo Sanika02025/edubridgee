@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduBridge - Videos</title>
-  <link rel="stylesheet" href="style.css">
+  <title>EduBridge Videos</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo">EduBridge</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="videos.html">Videos</a>
-      <a href="quiz.html">Quizzes</a>
-      <a href="gk.html">GK</a>
-    </nav>
-  </header>
 
-  <div class="main">
-  <h2>🎥 Learn with Videos</h2>
-  <p>Click and watch together in class</p>
+<header>
+  <h2>📺 Classroom Learning</h2>
+</header>
 
-  <div class="video-card">
-    <h3>Numbers 1–10</h3>
-    <iframe src="https://www.youtube.com/embed/tIDQyyG0S6E"></iframe>
+<div class="container">
+
+  <!-- SUBJECT SELECT -->
+  <h3>Select Subject</h3>
+  <button onclick="loadSubject('math')">Maths</button>
+  <button onclick="loadSubject('english')">English</button>
+
+  <!-- STANDARD / TOPIC -->
+  <div id="topics"></div>
+
+  <!-- VIDEO PLAYER -->
+  <div id="player"></div>
+
+  <!-- SUMMARY -->
+  <div id="summaryBox">
+    <h3>📘 Easy Summary</h3>
+    <p id="summaryText">Select a video to see summary</p>
   </div>
 
-  <div class="video-card">
-    <h3>Basic Addition</h3>
-    <iframe src="https://www.youtube.com/embed/QfVMqur4L1U"></iframe>
-  </div>
 </div>
+
+<script src="js/videos.js"></script>
 </body>
 </html>
