@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduBridge - Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">EduBridge</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="videos.html">Videos</a>
+      <a href="quiz.html">Quizzes</a>
+      <a href="gk.html">GK</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <h2>Class Quiz (Teacher-Led)</h2>
+
+    <div style="margin-top:15px;">
+      <button class="btn-primary" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="quiz-area" style="margin-top:25px; display:none;">
+      <p id="question-text"></p>
+      <div id="options"></div>
+      <p id="feedback"></p>
+      <p id="progress"></p>
+      <button class="btn-primary" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <div id="result-area" style="display:none; margin-top:25px;">
+      <h3 id="final-score"></h3>
+    </div>
+  </div>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>
