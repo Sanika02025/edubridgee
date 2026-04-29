@@ -1,44 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduBridge</title>
+  <title>EduBridge – Learn with Fun! 🎓</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
+ 
+<!-- ===== HEADER / NAV ===== -->
 <header>
-  <div class="logo">🎓 EduBridge Classroom</div>
+  <div class="logo">🎓 EduBridge</div>
+  <nav>
+    <a href="index.html" class="active">🏠 Home</a>
+    <a href="videos.html">📺 Videos</a>
+    <a href="quiz.html">📝 Quiz</a>
+    <a href="gk.html">🧠 GK</a>
+    <a href="practice.html">📄 Practice</a>
+  </nav>
 </header>
-
-<div class="hero">
-  <h1>Learn with Fun 🎉</h1>
-  <p>Watch videos, play quizzes, and learn easily!</p>
-
+ 
+<!-- ===== HERO ===== -->
+<div class="hero main">
+  <h1>Welcome to EduBridge! 🌟</h1>
+  <p>A fun way to learn, play, and grow every day!</p>
+ 
+  <!-- Daily Quote Box -->
+  <div class="quote-box" id="dailyQuote">Loading quote...</div>
+ 
+  <!-- Feature Cards -->
   <div class="cards">
-
+ 
     <div class="card">
-      <h3>📺 Videos</h3>
-      <p>Learn concepts visually</p>
-      <button onclick="location.href='videos.html'">Start</button>
+      <span class="emoji">📺</span>
+      <h3>Videos</h3>
+      <p>Learn Maths &amp; English with fun videos!</p>
+      <button onclick="location.href='videos.html'">Watch Now</button>
     </div>
-
+ 
     <div class="card">
-      <h3>📝 Quiz</h3>
-      <p>Test your knowledge</p>
-      <button onclick="location.href='quiz.html'">Start</button>
+      <span class="emoji">📝</span>
+      <h3>Quiz</h3>
+      <p>Test your knowledge with smart quizzes!</p>
+      <button onclick="location.href='quiz.html'">Start Quiz</button>
     </div>
-
+ 
     <div class="card">
-      <h3>🧠 GK</h3>
-      <p>Quick fun learning</p>
-      <button onclick="location.href='gk.html'">Start</button>
+      <span class="emoji">🧠</span>
+      <h3>GK Cards</h3>
+      <p>Flip cards to learn cool GK facts!</p>
+      <button onclick="location.href='gk.html'">Explore GK</button>
     </div>
-
+ 
+    <div class="card">
+      <span class="emoji">📄</span>
+      <h3>Practice</h3>
+      <p>Download worksheets to practise offline!</p>
+      <button onclick="location.href='practice.html'">Get PDFs</button>
+    </div>
+ 
   </div>
 </div>
-
+ 
+<!-- ===== MAIN JS ===== -->
+<script src="js/main.js"></script>
 </body>
 </html>

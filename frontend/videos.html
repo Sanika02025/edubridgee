@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videos - EduBridge</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <header>
-  <h2>EduBridge Classroom</h2>
+  <div class="logo">🎓 EduBridge</div>
 </header>
 
 <div class="main">
 
-  <h2>Select Subject</h2>
+  <!-- SUBJECT -->
+  <div id="step1">
+    <h2>Select Subject</h2>
+    <button class="subject-btn" onclick="selectSubject('maths')">📐 Maths</button>
+    <button class="subject-btn english" onclick="selectSubject('english')">📖 English</button>
+  </div>
 
-  <button class="btn-primary" onclick="loadVideo('maths',1)">Maths Class 1</button>
-  <button class="btn-primary" onclick="loadVideo('maths',2)">Maths Class 2</button>
-  <button class="btn-primary" onclick="loadVideo('english','basic')">English</button>
+  <!-- CATEGORY -->
+  <div id="step2" style="display:none;">
+    <button class="back-btn" onclick="goBack(1)">← Back</button>
+    <h2>Select Class / Category</h2>
+    <div id="categories"></div>
+  </div>
 
-  <div id="videoContainer"></div>
+  <!-- TOPIC -->
+  <div id="step3" style="display:none;">
+    <button class="back-btn" onclick="goBack(2)">← Back</button>
+    <h2>Select Topic</h2>
+    <div id="topics"></div>
+  </div>
+
+  <!-- VIDEOS -->
+  <div id="step4" style="display:none;">
+    <button class="back-btn" onclick="goBack(3)">← Back</button>
+    <h2>🎬 Videos</h2>
+    <div id="videos"></div>
+  </div>
 
 </div>
 

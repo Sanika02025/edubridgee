@@ -1,78 +1,115 @@
-let videos = {
+// ================= DATA =================
+const videoData = {
   maths: {
-    1: [
-      {
-        title: "Numbers 1 to 10",
-        url: "https://www.youtube.com/embed/tIDQyyG0S6E",
-        summary: "Learn counting from 1 to 10 using fun visuals."
-      },
-      {
-        title: "Addition Basics",
-        url: "https://www.youtube.com/embed/QfVMqur4L1U",
-        summary: "Simple addition using objects and examples."
-      }
-    ],
-
-    2: [
-      {
-        title: "Subtraction for Kids",
-        url: "https://www.youtube.com/embed/8l1gV7uQw8A",
-        summary: "Learn subtraction in a simple and fun way."
-      }
-    ]
+    "Class 1": {
+      "Numbers": [
+        {
+          title: "Counting 1-10",
+          file: "videos/numbers.mp4",
+          summary: "Learn counting from 1 to 10"
+        }
+      ],
+      "Addition": [
+        {
+          title: "Basic Addition",
+          file: "videos/addition.mp4",
+          summary: "Simple addition concept"
+        }
+      ]
+    }
   },
 
   english: {
-    basic: [
-      {
-        title: "Alphabet A-Z",
-        url: "https://www.youtube.com/embed/75p-N9YKqNo",
-        summary: "Learn all alphabets with pronunciation."
-      },
-      {
-        title: "Phonics Sounds",
-        url: "https://www.youtube.com/embed/BELlZKpi1Zs",
-        summary: "Understand letter sounds easily."
-      }
-    ]
+    "Basics": {
+      "Alphabets": [
+        {
+          title: "A to Z",
+          file: "videos/alphabets.mp4",
+          summary: "Learn alphabets A-Z"
+        }
+      ]
+    }
   }
 };
 
-function loadVideo(subject, level) {
-  let list;
+// ================= STATE =================
+let subject = "";
+let category = "";
 
-  if (subject === "maths") {
-    list = videos.maths[level];
-  } else {
-    list = videos.english.basic;
-  }
+// ================= NAVIGATION =================
+function showStep(n){
+  document.getElementById("step1").style.display = n===1?"block":"none";
+  document.getElementById("step2").style.display = n===2?"block":"none";
+  document.getElementById("step3").style.display = n===3?"block":"none";
+  document.getElementById("step4").style.display = n===4?"block":"none";
+}
+
+function goBack(step){
+  showStep(step);
+}
+
+// ================= STEP 1 =================
+function selectSubject(sub){
+  subject = sub;
 
   let html = "";
+  Object.keys(videoData[sub]).forEach(c=>{
+    html += `<button onclick="selectCategory('${c}')" class="topic-btn">${c}</button>`;
+  });
 
-  list.forEach(v => {
+  document.getElementById("categories").innerHTML = html;
+  showStep(2);
+}
+
+// ================= STEP 2 =================
+function selectCategory(cat){
+  category = cat;
+
+  let html = "";
+  Object.keys(videoData[subject][cat]).forEach(t=>{
+    html += `<button onclick="selectTopic('${t}')" class="topic-btn">${t}</button>`;
+  });
+
+  document.getElementById("topics").innerHTML = html;
+  showStep(3);
+}
+
+// ================= STEP 3 =================
+function selectTopic(topic){
+
+  const list = videoData[subject][category][topic];
+  let html = "";
+
+  list.forEach(v=>{
+
     html += `
       <div class="video-card">
+
         <h3>${v.title}</h3>
-        <iframe src="${v.url}" allowfullscreen></iframe>
+
+        <!-- LOCAL VIDEO -->
+        <video controls>
+          <source src="${v.file}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
 
         <div class="summary-box">
           <p>${v.summary}</p>
-
-          <button onclick="speak('${v.summary}')">
-            🔊 Listen
-          </button>
+          <button class="listen-btn" onclick="speak('${v.summary.replace(/'/g, "&#39;")}')">🔊 Listen</button>
         </div>
+
       </div>
     `;
   });
 
-  document.getElementById("videoContainer").innerHTML = html;
+  document.getElementById("videos").innerHTML = html;
+  showStep(4);
 }
-function speak(text) {
-  const speech = new SpeechSynthesisUtterance(text);
-  speech.rate = 0.9;
-  speech.pitch = 1;
-  speech.lang = "en-US";
 
-  window.speechSynthesis.speak(speech);
+// ================= SPEECH =================
+function speak(text){
+  speechSynthesis.cancel();
+  let msg = new SpeechSynthesisUtterance(text);
+  msg.lang = "en-IN";
+  speechSynthesis.speak(msg);
 }
