@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduBridge Videos</title>
+  <title>Videos - EduBridge</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <header>
-  <h2>📺 Classroom Learning</h2>
+  <h2>EduBridge Classroom</h2>
 </header>
 
-<div class="container">
+<div class="main">
 
-  <!-- SUBJECT SELECT -->
-  <h3>Select Subject</h3>
-  <button onclick="loadSubject('math')">Maths</button>
-  <button onclick="loadSubject('english')">English</button>
+  <h2>Select Subject</h2>
 
-  <!-- STANDARD / TOPIC -->
-  <div id="topics"></div>
+  <button class="btn-primary" onclick="loadVideo('maths',1)">Maths Class 1</button>
+  <button class="btn-primary" onclick="loadVideo('maths',2)">Maths Class 2</button>
+  <button class="btn-primary" onclick="loadVideo('english','basic')">English</button>
 
-  <!-- VIDEO PLAYER -->
-  <div id="player"></div>
-
-  <!-- SUMMARY -->
-  <div id="summaryBox">
-    <h3>📘 Easy Summary</h3>
-    <p id="summaryText">Select a video to see summary</p>
-  </div>
+  <div id="videoContainer"></div>
 
 </div>
 

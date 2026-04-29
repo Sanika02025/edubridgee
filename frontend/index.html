@@ -10,22 +10,35 @@
 <body>
 
 <header>
-  <h2>🎓 EduBridge Classroom</h2>
+  <div class="logo">🎓 EduBridge Classroom</div>
 </header>
 
-<div class="main">
-
+<div class="hero">
   <h1>Learn with Fun 🎉</h1>
-  <p id="quote"></p>
+  <p>Watch videos, play quizzes, and learn easily!</p>
 
   <div class="cards">
-    <button onclick="go('videos.html')">📺 Videos</button>
-    <button onclick="go('quiz.html')">📝 Quiz</button>
-    <button onclick="go('gk.html')">🧠 GK</button>
-  </div>
 
+    <div class="card">
+      <h3>📺 Videos</h3>
+      <p>Learn concepts visually</p>
+      <button onclick="location.href='videos.html'">Start</button>
+    </div>
+
+    <div class="card">
+      <h3>📝 Quiz</h3>
+      <p>Test your knowledge</p>
+      <button onclick="location.href='quiz.html'">Start</button>
+    </div>
+
+    <div class="card">
+      <h3>🧠 GK</h3>
+      <p>Quick fun learning</p>
+      <button onclick="location.href='gk.html'">Start</button>
+    </div>
+
+  </div>
 </div>
 
-<script src="js/main.js"></script>
 </body>
 </html>
